@@ -1,3 +1,5 @@
 ##Pipalo
- It is tool for copying files from one distributed storage to another distributed storage. It provides the distributed copy mechanism between two heterogeneous storage systems.
+ ```
+ Distributed copy solution for replicating data from one storage to another.
+ ```
  ![Pipalo](pipalo_architecture.png)
