@@ -1,4 +1,4 @@
-package org.pipalo.worker.server;
+package org.pipalo.worker.controller;
 
 import org.pipalo.common.model.TaskInfo;
 import org.pipalo.common.model.TaskStatus;
@@ -7,9 +7,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/worker")
 public class WorkerController {
 
+    static {
+        System.out.println("insider worker........");
+    }
     @Autowired
     TaskExecutionService taskExecutionService;
 
@@ -19,8 +21,13 @@ public class WorkerController {
     }
 
     @GetMapping("/task/{id}")
-    public TaskStatus getTaskStatus(@PathVariable String id){
+    public TaskStatus getTaskStatus(@PathVariable String id) {
         return taskExecutionService.getTaskStatus(id);
+    }
+
+    @GetMapping("/")
+    public String hello() {
+        return "hello!";
     }
 
 }

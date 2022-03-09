@@ -33,4 +33,9 @@ public class MasterController {
         this.workerService.registerWorker(worker);
     }
 
+    @GetMapping
+    public String hello() {
+        return "hello!";
+    }
+
 }

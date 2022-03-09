@@ -3,6 +3,7 @@ package org.pipalo.worker.service;
 import org.pipalo.common.model.TaskInfo;
 import org.pipalo.common.model.TaskStatus;
 import org.pipalo.worker.ops.TaskExecutor;
+import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
@@ -11,7 +12,6 @@ import java.util.Set;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-@Service
 public class TaskExecutionService {
     private ExecutorService executorService = Executors.newWorkStealingPool();
     private Set<TaskExecutor> runningTask = new HashSet<>();
